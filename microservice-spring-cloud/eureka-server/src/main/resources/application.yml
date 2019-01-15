@@ -1,0 +1,21 @@
+server:
+  port: 9800
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+    healthcheck:
+      enabled: true
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: biezhi
+    password: biezhi.pwd
